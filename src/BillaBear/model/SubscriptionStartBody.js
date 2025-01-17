@@ -58,6 +58,8 @@ export default class SubscriptionStartBody {
         obj.seatNumbrers = ApiClient.convertToType(data['seat_numbrers'], 'Number');
       if (data.hasOwnProperty('deny_trial'))
         obj.denyTrial = ApiClient.convertToType(data['deny_trial'], Bool);
+      if (data.hasOwnProperty('metadata'))
+        obj.metadata = ApiClient.convertToType(data['metadata'], Object);
     }
     return obj;
   }
@@ -138,4 +140,10 @@ SubscriptionStartBody.prototype.seatNumbrers = undefined;
  * @member {module:BillaBear/model/Bool} denyTrial
  */
 SubscriptionStartBody.prototype.denyTrial = undefined;
+
+/**
+ * Any metadata you want to add to a subscription
+ * @member {Object} metadata
+ */
+SubscriptionStartBody.prototype.metadata = undefined;
 

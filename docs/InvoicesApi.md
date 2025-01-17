@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="chargeInvoice"></a>
 # **chargeInvoice**
-> InlineResponse20012 chargeInvoice(invoiceId)
+> InlineResponse20014 chargeInvoice(invoiceId)
 
 Charge Invoice
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 <a name="getInvoicesForCustomer"></a>
 # **getInvoicesForCustomer**
-> InlineResponse2004 getInvoicesForCustomer(customerId)
+> InlineResponse2006 getInvoicesForCustomer(customerId)
 
 List Customer Invoices
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 

@@ -7,12 +7,16 @@ Method | HTTP request | Description
 [**addSeatsSubscriptions**](CustomersApi.md#addSeatsSubscriptions) | **POST** /subscription/{subscriptionId}/seats/add | Add Seats
 [**applyVoucherToCustomer**](CustomersApi.md#applyVoucherToCustomer) | **POST** /customer/{customerId}/voucher | Apply voucher
 [**createCustomer**](CustomersApi.md#createCustomer) | **POST** /customer | Create
+[**createCustomerUsageLimit**](CustomersApi.md#createCustomerUsageLimit) | **POST** /customer/{customerId}/uasge-limit | Create Usage Limit
+[**customerCustomerIdUasgeLimitLimitIdDelete**](CustomersApi.md#customerCustomerIdUasgeLimitLimitIdDelete) | **DELETE** /customer/{customerId}/uasge-limit/{limitId} | Delete Usage Limit
 [**disableCustomer**](CustomersApi.md#disableCustomer) | **POST** /customer/{customerId}/disable | Disable Customer
 [**enableCustomer**](CustomersApi.md#enableCustomer) | **POST** /customer/{customerId}/enable | Enable Customer
 [**getActiveForCustomer**](CustomersApi.md#getActiveForCustomer) | **GET** /customer/{customerId}/subscription/active | List Customer Active Subscriptions
 [**getAllCustomers**](CustomersApi.md#getAllCustomers) | **GET** /customer | List
 [**getCustomerById**](CustomersApi.md#getCustomerById) | **GET** /customer/{customerId} | Detail
+[**getCustomerCosts**](CustomersApi.md#getCustomerCosts) | **GET** /customer/{customerId}/costs | Usage Cost Estimate
 [**getCustomerLimitsById**](CustomersApi.md#getCustomerLimitsById) | **GET** /customer/{customerId}/limits | Fetch Customer Limits
+[**getCustomerUsageLimitsById**](CustomersApi.md#getCustomerUsageLimitsById) | **GET** /customer/{customerId}/uasge-limit | Fetch Customer Usage Limits
 [**getForCustomer**](CustomersApi.md#getForCustomer) | **GET** /customer/{customerId}/subscription | List Customer Subscriptions
 [**getInvoicesForCustomer**](CustomersApi.md#getInvoicesForCustomer) | **GET** /customer/{customerId}/invoices | List Customer Invoices
 [**getPaymentsForCustomer**](CustomersApi.md#getPaymentsForCustomer) | **GET** /customer/{customerId}/payment | List Customer Payments
@@ -23,7 +27,7 @@ Method | HTTP request | Description
 
 <a name="addSeatsSubscriptions"></a>
 # **addSeatsSubscriptions**
-> InlineResponse20011 addSeatsSubscriptions(body, subscriptionId)
+> InlineResponse20013 addSeatsSubscriptions(body, subscriptionId)
 
 Add Seats
 
@@ -62,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -75,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="applyVoucherToCustomer"></a>
 # **applyVoucherToCustomer**
-> &#x27;String&#x27; applyVoucherToCustomer(body, customerId)
+> applyVoucherToCustomer(body, customerId)
 
 Apply voucher
 
@@ -100,7 +104,7 @@ apiInstance.applyVoucherToCustomer(body, customerId, (error, data, response) => 
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -114,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 
@@ -175,9 +179,113 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="createCustomerUsageLimit"></a>
+# **createCustomerUsageLimit**
+> UsageLimit createCustomerUsageLimit(body, customerId)
+
+Create Usage Limit
+
+Create Usage Limit for the custoemr
+
+### Example
+```javascript
+import {BillaBear} from 'billa_bear';
+let defaultClient = BillaBear.ApiClient.instance;
+
+// Configure API key authorization: ApiKeyAuth
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+ApiKeyAuth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKeyAuth.apiKeyPrefix = 'Token';
+
+let apiInstance = new BillaBear.CustomersApi();
+let body = new BillaBear.CustomerIdUasgelimitBody(); // CustomerIdUasgelimitBody | 
+let customerId = "customerId_example"; // String | The id of the customer to retrieve
+
+apiInstance.createCustomerUsageLimit(body, customerId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CustomerIdUasgelimitBody**](CustomerIdUasgelimitBody.md)|  | 
+ **customerId** | **String**| The id of the customer to retrieve | 
+
+### Return type
+
+[**UsageLimit**](UsageLimit.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="customerCustomerIdUasgeLimitLimitIdDelete"></a>
+# **customerCustomerIdUasgeLimitLimitIdDelete**
+> customerCustomerIdUasgeLimitLimitIdDelete(customerId, usageLimitId)
+
+Delete Usage Limit
+
+Delete Usage Limit for the custoemr
+
+### Example
+```javascript
+import {BillaBear} from 'billa_bear';
+let defaultClient = BillaBear.ApiClient.instance;
+
+// Configure API key authorization: ApiKeyAuth
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+ApiKeyAuth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKeyAuth.apiKeyPrefix = 'Token';
+
+let apiInstance = new BillaBear.CustomersApi();
+let customerId = "customerId_example"; // String | The id of the customer to retrieve
+let usageLimitId = "usageLimitId_example"; // String | The id of the usage limit
+
+apiInstance.customerCustomerIdUasgeLimitLimitIdDelete(customerId, usageLimitId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **String**| The id of the customer to retrieve | 
+ **usageLimitId** | **String**| The id of the usage limit | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
 <a name="disableCustomer"></a>
 # **disableCustomer**
-> &#x27;String&#x27; disableCustomer(customerId)
+> disableCustomer(customerId)
 
 Disable Customer
 
@@ -201,7 +309,7 @@ apiInstance.disableCustomer(customerId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -214,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 
@@ -227,7 +335,7 @@ Name | Type | Description  | Notes
 
 <a name="enableCustomer"></a>
 # **enableCustomer**
-> &#x27;String&#x27; enableCustomer(customerId)
+> enableCustomer(customerId)
 
 Enable Customer
 
@@ -251,7 +359,7 @@ apiInstance.enableCustomer(customerId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -264,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 
@@ -277,7 +385,7 @@ Name | Type | Description  | Notes
 
 <a name="getActiveForCustomer"></a>
 # **getActiveForCustomer**
-> InlineResponse2006 getActiveForCustomer(customerId)
+> InlineResponse2008 getActiveForCustomer(customerId)
 
 List Customer Active Subscriptions
 
@@ -314,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -351,7 +459,8 @@ let opts = {
   'email': "email_example", // String | The email to search for
   'country': "country_example", // String | The country code to search for
   'reference': "reference_example", // String | The reference to search for
-  'externalReference': "externalReference_example" // String | The external reference to search for
+  'externalReference': "externalReference_example", // String | The external reference to search for
+  'companyName': "companyName_example" // String | The company name to search for
 };
 apiInstance.getAllCustomers(opts, (error, data, response) => {
   if (error) {
@@ -372,6 +481,7 @@ Name | Type | Description  | Notes
  **country** | **String**| The country code to search for | [optional] 
  **reference** | **String**| The reference to search for | [optional] 
  **externalReference** | **String**| The external reference to search for | [optional] 
+ **companyName** | **String**| The company name to search for | [optional] 
 
 ### Return type
 
@@ -436,9 +546,59 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="getCustomerCosts"></a>
+# **getCustomerCosts**
+> InlineResponse2001 getCustomerCosts(customerId)
+
+Usage Cost Estimate
+
+The estimated costs from usage based billing for a customer
+
+### Example
+```javascript
+import {BillaBear} from 'billa_bear';
+let defaultClient = BillaBear.ApiClient.instance;
+
+// Configure API key authorization: ApiKeyAuth
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+ApiKeyAuth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKeyAuth.apiKeyPrefix = 'Token';
+
+let apiInstance = new BillaBear.CustomersApi();
+let customerId = "customerId_example"; // String | The id of the customer to retrieve
+
+apiInstance.getCustomerCosts(customerId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **String**| The id of the customer to retrieve | 
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="getCustomerLimitsById"></a>
 # **getCustomerLimitsById**
-> InlineResponse2001 getCustomerLimitsById(customerId)
+> InlineResponse2002 getCustomerLimitsById(customerId)
 
 Fetch Customer Limits
 
@@ -475,7 +635,57 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getCustomerUsageLimitsById"></a>
+# **getCustomerUsageLimitsById**
+> InlineResponse2005 getCustomerUsageLimitsById(customerId)
+
+Fetch Customer Usage Limits
+
+Usage Limits for a specific customer
+
+### Example
+```javascript
+import {BillaBear} from 'billa_bear';
+let defaultClient = BillaBear.ApiClient.instance;
+
+// Configure API key authorization: ApiKeyAuth
+let ApiKeyAuth = defaultClient.authentications['ApiKeyAuth'];
+ApiKeyAuth.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ApiKeyAuth.apiKeyPrefix = 'Token';
+
+let apiInstance = new BillaBear.CustomersApi();
+let customerId = "customerId_example"; // String | The id of the customer to retrieve
+
+apiInstance.getCustomerUsageLimitsById(customerId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **String**| The id of the customer to retrieve | 
+
+### Return type
+
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -488,7 +698,7 @@ Name | Type | Description  | Notes
 
 <a name="getForCustomer"></a>
 # **getForCustomer**
-> InlineResponse2006 getForCustomer(customerId)
+> InlineResponse2008 getForCustomer(customerId)
 
 List Customer Subscriptions
 
@@ -525,7 +735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -538,7 +748,7 @@ Name | Type | Description  | Notes
 
 <a name="getInvoicesForCustomer"></a>
 # **getInvoicesForCustomer**
-> InlineResponse2004 getInvoicesForCustomer(customerId)
+> InlineResponse2006 getInvoicesForCustomer(customerId)
 
 List Customer Invoices
 
@@ -575,7 +785,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -588,7 +798,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentsForCustomer"></a>
 # **getPaymentsForCustomer**
-> InlineResponse2003 getPaymentsForCustomer(customerId, opts)
+> InlineResponse2004 getPaymentsForCustomer(customerId, opts)
 
 List Customer Payments
 
@@ -632,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -645,7 +855,7 @@ Name | Type | Description  | Notes
 
 <a name="getRefundsForCustomer"></a>
 # **getRefundsForCustomer**
-> InlineResponse2002 getRefundsForCustomer(customerId, opts)
+> InlineResponse2003 getRefundsForCustomer(customerId, opts)
 
 List Customer Refunds
 
@@ -689,7 +899,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -702,7 +912,7 @@ Name | Type | Description  | Notes
 
 <a name="listPaymentDetails"></a>
 # **listPaymentDetails**
-> InlineResponse2005 listPaymentDetails(customerId)
+> InlineResponse2007 listPaymentDetails(customerId)
 
 List Customer&#x27;s Payment Details
 
@@ -739,7 +949,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -752,7 +962,7 @@ Name | Type | Description  | Notes
 
 <a name="removeSeatsSubscriptions"></a>
 # **removeSeatsSubscriptions**
-> InlineResponse20011 removeSeatsSubscriptions(body, subscriptionId)
+> InlineResponse20013 removeSeatsSubscriptions(body, subscriptionId)
 
 Remove Seats
 
@@ -791,7 +1001,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 

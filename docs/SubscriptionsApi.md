@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addSeatsSubscriptions"></a>
 # **addSeatsSubscriptions**
-> InlineResponse20011 addSeatsSubscriptions(body, subscriptionId)
+> InlineResponse20013 addSeatsSubscriptions(body, subscriptionId)
 
 Add Seats
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 <a name="cancelSubscription"></a>
 # **cancelSubscription**
-> &#x27;String&#x27; cancelSubscription(body, subscriptionId)
+> cancelSubscription(body, subscriptionId)
 
 Cancel Subscription
 
@@ -97,7 +97,7 @@ apiInstance.cancelSubscription(body, subscriptionId, (error, data, response) => 
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 <a name="changeSubscriptionPrice"></a>
 # **changeSubscriptionPrice**
-> InlineResponse20011 changeSubscriptionPrice(body, subscriptionId)
+> InlineResponse20013 changeSubscriptionPrice(body, subscriptionId)
 
 Change Price
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 <a name="getActiveForCustomer"></a>
 # **getActiveForCustomer**
-> InlineResponse2006 getActiveForCustomer(customerId)
+> InlineResponse2008 getActiveForCustomer(customerId)
 
 List Customer Active Subscriptions
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 <a name="getForCustomer"></a>
 # **getForCustomer**
-> InlineResponse2006 getForCustomer(customerId)
+> InlineResponse2008 getForCustomer(customerId)
 
 List Customer Subscriptions
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 <a name="listSubscriptionPlans"></a>
 # **listSubscriptionPlans**
-> InlineResponse20010 listSubscriptionPlans(opts)
+> InlineResponse20012 listSubscriptionPlans(opts)
 
 List Subscription Plans
 
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 <a name="listSubscriptions"></a>
 # **listSubscriptions**
-> InlineResponse2006 listSubscriptions(opts)
+> InlineResponse2008 listSubscriptions(opts)
 
 List
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 <a name="removeSeatsSubscriptions"></a>
 # **removeSeatsSubscriptions**
-> InlineResponse20011 removeSeatsSubscriptions(body, subscriptionId)
+> InlineResponse20013 removeSeatsSubscriptions(body, subscriptionId)
 
 Remove Seats
 
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 

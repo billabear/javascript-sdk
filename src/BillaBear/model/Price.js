@@ -14,6 +14,7 @@
  *
  */
 import ApiClient from '../ApiClient';
+import Metric from './Metric';
 
 /**
  * The Price model module.
@@ -61,6 +62,8 @@ export default class Price {
         obj.includingTax = ApiClient.convertToType(data['including_tax'], 'Boolean');
       if (data.hasOwnProperty('public'))
         obj._public = ApiClient.convertToType(data['public'], 'Boolean');
+      if (data.hasOwnProperty('metric'))
+        obj.metric = Metric.constructFromObject(data['metric']);
     }
     return obj;
   }
@@ -138,4 +141,9 @@ Price.prototype.includingTax = undefined;
  * @member {Boolean} _public
  */
 Price.prototype._public = undefined;
+
+/**
+ * @member {module:BillaBear/model/Metric} metric
+ */
+Price.prototype.metric = undefined;
 

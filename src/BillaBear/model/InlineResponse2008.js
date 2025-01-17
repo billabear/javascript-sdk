@@ -14,7 +14,7 @@
  *
  */
 import ApiClient from '../ApiClient';
-import Product from './Product';
+import Subscription from './Subscription';
 
 /**
  * The InlineResponse2008 model module.
@@ -41,7 +41,7 @@ export default class InlineResponse2008 {
     if (data) {
       obj = obj || new InlineResponse2008();
       if (data.hasOwnProperty('data'))
-        obj.data = ApiClient.convertToType(data['data'], [Product]);
+        obj.data = ApiClient.convertToType(data['data'], [Subscription]);
       if (data.hasOwnProperty('has_more'))
         obj.hasMore = ApiClient.convertToType(data['has_more'], 'Boolean');
       if (data.hasOwnProperty('last_key'))
@@ -52,7 +52,7 @@ export default class InlineResponse2008 {
 }
 
 /**
- * @member {Array.<module:BillaBear/model/Product>} data
+ * @member {Array.<module:BillaBear/model/Subscription>} data
  */
 InlineResponse2008.prototype.data = undefined;
 

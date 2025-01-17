@@ -16,7 +16,7 @@
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
 import FrontendToken from '../model/FrontendToken';
-import InlineResponse2005 from '../model/InlineResponse2005';
+import InlineResponse2007 from '../model/InlineResponse2007';
 import PaymentDetails from '../model/PaymentDetails';
 
 /**
@@ -94,7 +94,7 @@ export default class PaymentDetailsApi {
      * Callback function to receive the result of the deletePaymentDetails operation.
      * @callback moduleBillaBear/api/PaymentDetailsApi~deletePaymentDetailsCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -103,7 +103,6 @@ export default class PaymentDetailsApi {
      * Delete Payment Details
      * @param {String} paymentDetailsId The id of the payment details
      * @param {module:BillaBear/api/PaymentDetailsApi~deletePaymentDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     deletePaymentDetails(paymentDetailsId, callback) {
       
@@ -129,7 +128,7 @@ export default class PaymentDetailsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/payment-methods/{paymentDetailsId}', 'DELETE',
@@ -141,7 +140,7 @@ export default class PaymentDetailsApi {
      * Callback function to receive the result of the deletePaymentDetailsCustomer operation.
      * @callback moduleBillaBear/api/PaymentDetailsApi~deletePaymentDetailsCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -151,7 +150,6 @@ export default class PaymentDetailsApi {
      * @param {String} customerId The id of the customer to retrieve
      * @param {String} paymentDetailsId The id of the payment details
      * @param {module:BillaBear/api/PaymentDetailsApi~deletePaymentDetailsCustomerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     deletePaymentDetailsCustomer(customerId, paymentDetailsId, callback) {
       
@@ -181,7 +179,7 @@ export default class PaymentDetailsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/payment-methods/{paymentDetailsId}', 'DELETE',
@@ -240,7 +238,7 @@ export default class PaymentDetailsApi {
      * Callback function to receive the result of the listPaymentDetails operation.
      * @callback moduleBillaBear/api/PaymentDetailsApi~listPaymentDetailsCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2005{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2007{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -275,7 +273,7 @@ export default class PaymentDetailsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2005;
+      let returnType = InlineResponse2007;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/payment-methods', 'GET',
@@ -287,7 +285,7 @@ export default class PaymentDetailsApi {
      * Callback function to receive the result of the makeDefaultPaymentDetails operation.
      * @callback moduleBillaBear/api/PaymentDetailsApi~makeDefaultPaymentDetailsCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -297,7 +295,6 @@ export default class PaymentDetailsApi {
      * @param {String} customerId The id of the customer to retrieve
      * @param {String} paymentDetailsId The id of the payment details
      * @param {module:BillaBear/api/PaymentDetailsApi~makeDefaultPaymentDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     makeDefaultPaymentDetails(customerId, paymentDetailsId, callback) {
       
@@ -327,7 +324,7 @@ export default class PaymentDetailsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/payment-methods/{paymentDetailsId}/default', 'POST',
@@ -339,7 +336,7 @@ export default class PaymentDetailsApi {
      * Callback function to receive the result of the makeDefaultPaymentDetailsCustomer operation.
      * @callback moduleBillaBear/api/PaymentDetailsApi~makeDefaultPaymentDetailsCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -349,7 +346,6 @@ export default class PaymentDetailsApi {
      * @param {String} customerId The id of the customer to retrieve
      * @param {String} paymentDetailsId The id of the payment details
      * @param {module:BillaBear/api/PaymentDetailsApi~makeDefaultPaymentDetailsCustomerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     makeDefaultPaymentDetailsCustomer(customerId, paymentDetailsId, callback) {
       
@@ -379,7 +375,7 @@ export default class PaymentDetailsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/payment-methods/{paymentDetailsId}/default', 'POST',

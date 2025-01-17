@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="chargeInvoice"></a>
 # **chargeInvoice**
-> InlineResponse20012 chargeInvoice(invoiceId)
+> InlineResponse20014 chargeInvoice(invoiceId)
 
 Charge Invoice
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 <a name="getInvoicesForCustomer"></a>
 # **getInvoicesForCustomer**
-> InlineResponse2004 getInvoicesForCustomer(customerId)
+> InlineResponse2006 getInvoicesForCustomer(customerId)
 
 List Customer Invoices
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentsForCustomer"></a>
 # **getPaymentsForCustomer**
-> InlineResponse2003 getPaymentsForCustomer(customerId, opts)
+> InlineResponse2004 getPaymentsForCustomer(customerId, opts)
 
 List Customer Payments
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 <a name="listPayment"></a>
 # **listPayment**
-> InlineResponse2007 listPayment(opts)
+> InlineResponse2009 listPayment(opts)
 
 List
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 <a name="refundPayment"></a>
 # **refundPayment**
-> &#x27;String&#x27; refundPayment(body, paymentId)
+> refundPayment(body, paymentId)
 
 Refund Payment
 
@@ -351,7 +351,7 @@ apiInstance.refundPayment(body, paymentId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 

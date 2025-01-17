@@ -61,6 +61,8 @@ export default class Subscription {
         obj.mainExternalReference = ApiClient.convertToType(data['main_external_reference'], 'String');
       if (data.hasOwnProperty('child_external_reference'))
         obj.childExternalReference = ApiClient.convertToType(data['child_external_reference'], 'String');
+      if (data.hasOwnProperty('metadata'))
+        obj.metadata = ApiClient.convertToType(data['metadata'], Object);
       if (data.hasOwnProperty('price'))
         obj.price = Price.constructFromObject(data['price']);
       if (data.hasOwnProperty('plan'))
@@ -119,6 +121,11 @@ Subscription.prototype.mainExternalReference = undefined;
  * @member {String} childExternalReference
  */
 Subscription.prototype.childExternalReference = undefined;
+
+/**
+ * @member {Object} metadata
+ */
+Subscription.prototype.metadata = undefined;
 
 /**
  * @member {module:BillaBear/model/Price} price

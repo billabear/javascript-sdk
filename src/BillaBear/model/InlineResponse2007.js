@@ -14,7 +14,7 @@
  *
  */
 import ApiClient from '../ApiClient';
-import InlineResponse2007Data from './InlineResponse2007Data';
+import PaymentDetails from './PaymentDetails';
 
 /**
  * The InlineResponse2007 model module.
@@ -41,7 +41,7 @@ export default class InlineResponse2007 {
     if (data) {
       obj = obj || new InlineResponse2007();
       if (data.hasOwnProperty('data'))
-        obj.data = ApiClient.convertToType(data['data'], [InlineResponse2007Data]);
+        obj.data = ApiClient.convertToType(data['data'], [PaymentDetails]);
       if (data.hasOwnProperty('has_more'))
         obj.hasMore = ApiClient.convertToType(data['has_more'], 'Boolean');
       if (data.hasOwnProperty('last_key'))
@@ -52,7 +52,7 @@ export default class InlineResponse2007 {
 }
 
 /**
- * @member {Array.<module:BillaBear/model/InlineResponse2007Data>} data
+ * @member {Array.<module:BillaBear/model/PaymentDetails>} data
  */
 InlineResponse2007.prototype.data = undefined;
 

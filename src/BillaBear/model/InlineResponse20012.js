@@ -14,6 +14,7 @@
  *
  */
 import ApiClient from '../ApiClient';
+import SubscriptionPlan from './SubscriptionPlan';
 
 /**
  * The InlineResponse20012 model module.
@@ -39,76 +40,29 @@ export default class InlineResponse20012 {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new InlineResponse20012();
-      if (data.hasOwnProperty('paid'))
-        obj.paid = ApiClient.convertToType(data['paid'], 'Boolean');
-      if (data.hasOwnProperty('failure_reason'))
-        obj.failureReason = ApiClient.convertToType(data['failure_reason'], 'String');
+      if (data.hasOwnProperty('data'))
+        obj.data = ApiClient.convertToType(data['data'], [SubscriptionPlan]);
+      if (data.hasOwnProperty('has_more'))
+        obj.hasMore = ApiClient.convertToType(data['has_more'], 'Boolean');
+      if (data.hasOwnProperty('last_key'))
+        obj.lastKey = ApiClient.convertToType(data['last_key'], 'String');
     }
     return obj;
   }
 }
 
 /**
- * @member {Boolean} paid
+ * @member {Array.<module:BillaBear/model/SubscriptionPlan>} data
  */
-InlineResponse20012.prototype.paid = undefined;
+InlineResponse20012.prototype.data = undefined;
 
 /**
- * Allowed values for the <code>failureReason</code> property.
- * @enum {String}
- * @readonly
+ * @member {Boolean} hasMore
  */
-InlineResponse20012.FailureReasonEnum = {
-  /**
-   * value: "expired_card"
-   * @const
-   */
-  expiredCard: "expired_card",
+InlineResponse20012.prototype.hasMore = undefined;
 
-  /**
-   * value: "invalid_details"
-   * @const
-   */
-  invalidDetails: "invalid_details",
-
-  /**
-   * value: "fraud"
-   * @const
-   */
-  fraud: "fraud",
-
-  /**
-   * value: "authentication_required"
-   * @const
-   */
-  authenticationRequired: "authentication_required",
-
-  /**
-   * value: "invalid_card"
-   * @const
-   */
-  invalidCard: "invalid_card",
-
-  /**
-   * value: "general_decline"
-   * @const
-   */
-  generalDecline: "general_decline",
-
-  /**
-   * value: "contact_provider"
-   * @const
-   */
-  contactProvider: "contact_provider",
-
-  /**
-   * value: "lack_of_funds"
-   * @const
-   */
-  lackOfFunds: "lack_of_funds"
-};
 /**
- * @member {module:BillaBear/model/InlineResponse20012.FailureReasonEnum} failureReason
+ * @member {String} lastKey
  */
-InlineResponse20012.prototype.failureReason = undefined;
+InlineResponse20012.prototype.lastKey = undefined;
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createProduct"></a>
 # **createProduct**
-> &#x27;String&#x27; createProduct(body)
+> createProduct(body)
 
 Create
 
@@ -35,7 +35,7 @@ apiInstance.createProduct(body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 <a name="listProduct"></a>
 # **listProduct**
-> InlineResponse2008 listProduct(opts)
+> InlineResponse20010 listProduct(opts)
 
 List
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 

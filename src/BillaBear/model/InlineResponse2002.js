@@ -14,7 +14,8 @@
  *
  */
 import ApiClient from '../ApiClient';
-import Refund from './Refund';
+import Feature from './Feature';
+import Limit from './Limit';
 
 /**
  * The InlineResponse2002 model module.
@@ -40,29 +41,29 @@ export default class InlineResponse2002 {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new InlineResponse2002();
-      if (data.hasOwnProperty('data'))
-        obj.data = ApiClient.convertToType(data['data'], [Refund]);
-      if (data.hasOwnProperty('has_more'))
-        obj.hasMore = ApiClient.convertToType(data['has_more'], 'Boolean');
-      if (data.hasOwnProperty('last_key'))
-        obj.lastKey = ApiClient.convertToType(data['last_key'], 'String');
+      if (data.hasOwnProperty('limits'))
+        obj.limits = ApiClient.convertToType(data['limits'], [Limit]);
+      if (data.hasOwnProperty('features'))
+        obj.features = ApiClient.convertToType(data['features'], [Feature]);
+      if (data.hasOwnProperty('user_count'))
+        obj.userCount = ApiClient.convertToType(data['user_count'], 'Number');
     }
     return obj;
   }
 }
 
 /**
- * @member {Array.<module:BillaBear/model/Refund>} data
+ * @member {Array.<module:BillaBear/model/Limit>} limits
  */
-InlineResponse2002.prototype.data = undefined;
+InlineResponse2002.prototype.limits = undefined;
 
 /**
- * @member {Boolean} hasMore
+ * @member {Array.<module:BillaBear/model/Feature>} features
  */
-InlineResponse2002.prototype.hasMore = undefined;
+InlineResponse2002.prototype.features = undefined;
 
 /**
- * @member {String} lastKey
+ * @member {Number} userCount
  */
-InlineResponse2002.prototype.lastKey = undefined;
+InlineResponse2002.prototype.userCount = undefined;
 

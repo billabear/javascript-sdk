@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[Subscription]**](Subscription.md) |  | [optional] 
+**data** | [**[Invoice]**](Invoice.md) |  | [optional] 
 **hasMore** | **Boolean** |  | [optional] 
 **lastKey** | **String** |  | [optional] 

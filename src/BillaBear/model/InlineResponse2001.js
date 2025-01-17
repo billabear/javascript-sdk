@@ -14,8 +14,8 @@
  *
  */
 import ApiClient from '../ApiClient';
-import Feature from './Feature';
-import Limit from './Limit';
+import Cost from './Cost';
+import MetricCost from './MetricCost';
 
 /**
  * The InlineResponse2001 model module.
@@ -41,29 +41,22 @@ export default class InlineResponse2001 {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new InlineResponse2001();
-      if (data.hasOwnProperty('limits'))
-        obj.limits = ApiClient.convertToType(data['limits'], [Limit]);
-      if (data.hasOwnProperty('features'))
-        obj.features = ApiClient.convertToType(data['features'], [Feature]);
-      if (data.hasOwnProperty('user_count'))
-        obj.userCount = ApiClient.convertToType(data['user_count'], 'Number');
+      if (data.hasOwnProperty('costs'))
+        obj.costs = ApiClient.convertToType(data['costs'], [MetricCost]);
+      if (data.hasOwnProperty('cost'))
+        obj.cost = Cost.constructFromObject(data['cost']);
     }
     return obj;
   }
 }
 
 /**
- * @member {Array.<module:BillaBear/model/Limit>} limits
+ * @member {Array.<module:BillaBear/model/MetricCost>} costs
  */
-InlineResponse2001.prototype.limits = undefined;
+InlineResponse2001.prototype.costs = undefined;
 
 /**
- * @member {Array.<module:BillaBear/model/Feature>} features
+ * @member {module:BillaBear/model/Cost} cost
  */
-InlineResponse2001.prototype.features = undefined;
-
-/**
- * @member {Number} userCount
- */
-InlineResponse2001.prototype.userCount = undefined;
+InlineResponse2001.prototype.cost = undefined;
 

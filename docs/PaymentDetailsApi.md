@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="deletePaymentDetails"></a>
 # **deletePaymentDetails**
-> &#x27;String&#x27; deletePaymentDetails(paymentDetailsId)
+> deletePaymentDetails(paymentDetailsId)
 
 Delete
 
@@ -91,7 +91,7 @@ apiInstance.deletePaymentDetails(paymentDetailsId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 <a name="deletePaymentDetailsCustomer"></a>
 # **deletePaymentDetailsCustomer**
-> &#x27;String&#x27; deletePaymentDetailsCustomer(customerId, paymentDetailsId)
+> deletePaymentDetailsCustomer(customerId, paymentDetailsId)
 
 Delete With Customer
 
@@ -142,7 +142,7 @@ apiInstance.deletePaymentDetailsCustomer(customerId, paymentDetailsId, (error, d
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 <a name="listPaymentDetails"></a>
 # **listPaymentDetails**
-> InlineResponse2005 listPaymentDetails(customerId)
+> InlineResponse2007 listPaymentDetails(customerId)
 
 List Customer&#x27;s Payment Details
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 <a name="makeDefaultPaymentDetails"></a>
 # **makeDefaultPaymentDetails**
-> &#x27;String&#x27; makeDefaultPaymentDetails(customerId, paymentDetailsId)
+> makeDefaultPaymentDetails(customerId, paymentDetailsId)
 
 Make Default
 
@@ -294,7 +294,7 @@ apiInstance.makeDefaultPaymentDetails(customerId, paymentDetailsId, (error, data
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 <a name="makeDefaultPaymentDetailsCustomer"></a>
 # **makeDefaultPaymentDetailsCustomer**
-> &#x27;String&#x27; makeDefaultPaymentDetailsCustomer(customerId, paymentDetailsId)
+> makeDefaultPaymentDetailsCustomer(customerId, paymentDetailsId)
 
 Make Default With Customer
 
@@ -346,7 +346,7 @@ apiInstance.makeDefaultPaymentDetailsCustomer(customerId, paymentDetailsId, (err
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#x27;String&#x27;**
+null (empty response body)
 
 ### Authorization
 

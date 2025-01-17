@@ -14,7 +14,7 @@
  *
  */
 import ApiClient from '../ApiClient';
-import PaymentDetails from './PaymentDetails';
+import UsageLimit from './UsageLimit';
 
 /**
  * The InlineResponse2005 model module.
@@ -41,7 +41,7 @@ export default class InlineResponse2005 {
     if (data) {
       obj = obj || new InlineResponse2005();
       if (data.hasOwnProperty('data'))
-        obj.data = ApiClient.convertToType(data['data'], [PaymentDetails]);
+        obj.data = ApiClient.convertToType(data['data'], [UsageLimit]);
       if (data.hasOwnProperty('has_more'))
         obj.hasMore = ApiClient.convertToType(data['has_more'], 'Boolean');
       if (data.hasOwnProperty('last_key'))
@@ -52,7 +52,7 @@ export default class InlineResponse2005 {
 }
 
 /**
- * @member {Array.<module:BillaBear/model/PaymentDetails>} data
+ * @member {Array.<module:BillaBear/model/UsageLimit>} data
  */
 InlineResponse2005.prototype.data = undefined;
 

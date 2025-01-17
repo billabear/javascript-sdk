@@ -1,8 +1,8 @@
 {
-  "name": "billabear",
+  "name": "billa_bear",
   "version": "1.0.0",
   "description": "The_REST_API_provided_by_BillaBear",
-  "license": "FSL",
+  "license": "FCL",
   "main": "src/BillaBear/index.js",
   "scripts": {
     "test": "mocha --require @babel/register --recursive"

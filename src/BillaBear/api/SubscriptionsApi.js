@@ -15,9 +15,9 @@
  */
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
-import InlineResponse20010 from '../model/InlineResponse20010';
-import InlineResponse20011 from '../model/InlineResponse20011';
-import InlineResponse2006 from '../model/InlineResponse2006';
+import InlineResponse20012 from '../model/InlineResponse20012';
+import InlineResponse20013 from '../model/InlineResponse20013';
+import InlineResponse2008 from '../model/InlineResponse2008';
 import SeatsAddBody from '../model/SeatsAddBody';
 import SeatsRemoveBody from '../model/SeatsRemoveBody';
 import Subscription from '../model/Subscription';
@@ -51,7 +51,7 @@ export default class SubscriptionsApi {
      * Callback function to receive the result of the addSeatsSubscriptions operation.
      * @callback moduleBillaBear/api/SubscriptionsApi~addSeatsSubscriptionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse20011{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20013{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -91,7 +91,7 @@ export default class SubscriptionsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20011;
+      let returnType = InlineResponse20013;
 
       return this.apiClient.callApi(
         '/subscription/{subscriptionId}/seats/add', 'POST',
@@ -103,7 +103,7 @@ export default class SubscriptionsApi {
      * Callback function to receive the result of the cancelSubscription operation.
      * @callback moduleBillaBear/api/SubscriptionsApi~cancelSubscriptionCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -113,7 +113,6 @@ export default class SubscriptionsApi {
      * @param {module:BillaBear/model/SubscriptionIdCancelBody} body 
      * @param {String} subscriptionId The id of the subscription to retrieve
      * @param {module:BillaBear/api/SubscriptionsApi~cancelSubscriptionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     cancelSubscription(body, subscriptionId, callback) {
       
@@ -143,7 +142,7 @@ export default class SubscriptionsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/subscription/{subscriptionId}/cancel', 'POST',
@@ -155,7 +154,7 @@ export default class SubscriptionsApi {
      * Callback function to receive the result of the changeSubscriptionPrice operation.
      * @callback moduleBillaBear/api/SubscriptionsApi~changeSubscriptionPriceCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse20011{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20013{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -195,7 +194,7 @@ export default class SubscriptionsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20011;
+      let returnType = InlineResponse20013;
 
       return this.apiClient.callApi(
         '/subscription/{subscriptionId}/price', 'POST',
@@ -363,7 +362,7 @@ export default class SubscriptionsApi {
      * Callback function to receive the result of the getActiveForCustomer operation.
      * @callback moduleBillaBear/api/SubscriptionsApi~getActiveForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2006{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2008{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -398,7 +397,7 @@ export default class SubscriptionsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2006;
+      let returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/subscription/active', 'GET',
@@ -410,7 +409,7 @@ export default class SubscriptionsApi {
      * Callback function to receive the result of the getForCustomer operation.
      * @callback moduleBillaBear/api/SubscriptionsApi~getForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2006{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2008{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -445,7 +444,7 @@ export default class SubscriptionsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2006;
+      let returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/subscription', 'GET',
@@ -457,7 +456,7 @@ export default class SubscriptionsApi {
      * Callback function to receive the result of the listSubscriptionPlans operation.
      * @callback moduleBillaBear/api/SubscriptionsApi~listSubscriptionPlansCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse20010{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20012{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -490,7 +489,7 @@ export default class SubscriptionsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20010;
+      let returnType = InlineResponse20012;
 
       return this.apiClient.callApi(
         '/subscription/plans', 'GET',
@@ -502,7 +501,7 @@ export default class SubscriptionsApi {
      * Callback function to receive the result of the listSubscriptions operation.
      * @callback moduleBillaBear/api/SubscriptionsApi~listSubscriptionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2006{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2008{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -535,7 +534,7 @@ export default class SubscriptionsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2006;
+      let returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
         '/subscription', 'GET',
@@ -547,7 +546,7 @@ export default class SubscriptionsApi {
      * Callback function to receive the result of the removeSeatsSubscriptions operation.
      * @callback moduleBillaBear/api/SubscriptionsApi~removeSeatsSubscriptionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse20011{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20013{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -587,7 +586,7 @@ export default class SubscriptionsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20011;
+      let returnType = InlineResponse20013;
 
       return this.apiClient.callApi(
         '/subscription/{subscriptionId}/seats/remove', 'POST',

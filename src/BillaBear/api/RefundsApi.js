@@ -15,7 +15,7 @@
  */
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
-import InlineResponse2002 from '../model/InlineResponse2002';
+import InlineResponse2003 from '../model/InlineResponse2003';
 import Refund from '../model/Refund';
 
 /**
@@ -41,7 +41,7 @@ export default class RefundsApi {
      * Callback function to receive the result of the getRefundsForCustomer operation.
      * @callback moduleBillaBear/api/RefundsApi~getRefundsForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2002{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2003{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -80,7 +80,7 @@ export default class RefundsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/refund', 'GET',
@@ -92,7 +92,7 @@ export default class RefundsApi {
      * Callback function to receive the result of the listRefund operation.
      * @callback moduleBillaBear/api/RefundsApi~listRefundCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2002{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2003{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -126,7 +126,7 @@ export default class RefundsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/refund', 'GET',

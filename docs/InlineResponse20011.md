@@ -3,4 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **Boolean** |  | [optional] 
+**data** | [**[Price]**](Price.md) |  | [optional] 
+**hasMore** | **Boolean** |  | [optional] 
+**lastKey** | **String** |  | [optional] 

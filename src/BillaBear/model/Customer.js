@@ -66,6 +66,10 @@ export default class Customer {
         obj.locale = ApiClient.convertToType(data['locale'], 'String');
       if (data.hasOwnProperty('brand'))
         obj.brand = ApiClient.convertToType(data['brand'], 'String');
+      if (data.hasOwnProperty('invoice_format'))
+        obj.invoiceFormat = ApiClient.convertToType(data['invoice_format'], 'String');
+      if (data.hasOwnProperty('marketing_opt_in'))
+        obj.marketingOptIn = ApiClient.convertToType(data['marketing_opt_in'], 'Boolean');
     }
     return obj;
   }
@@ -173,4 +177,34 @@ Customer.prototype.locale = undefined;
  * @member {String} brand
  */
 Customer.prototype.brand = undefined;
+
+/**
+ * Allowed values for the <code>invoiceFormat</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Customer.InvoiceFormatEnum = {
+  /**
+   * value: "pdf"
+   * @const
+   */
+  pdf: "pdf",
+
+  /**
+   * value: "xrechnung"
+   * @const
+   */
+  xrechnung: "xrechnung"
+};
+/**
+ * Choice between 'pdf' and 'xrechnung'. <strong>Since 2024.02.01</strong>
+ * @member {module:BillaBear/model/Customer.InvoiceFormatEnum} invoiceFormat
+ */
+Customer.prototype.invoiceFormat = undefined;
+
+/**
+ * If the customer has opted in for marketing
+ * @member {Boolean} marketingOptIn
+ */
+Customer.prototype.marketingOptIn = undefined;
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[PaymentDetails]**](PaymentDetails.md) |  | [optional] 
+**data** | [**[UsageLimit]**](UsageLimit.md) |  | [optional] 
 **hasMore** | **Boolean** |  | [optional] 
 **lastKey** | **String** |  | [optional] 

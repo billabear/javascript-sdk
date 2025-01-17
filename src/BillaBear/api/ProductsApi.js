@@ -15,7 +15,7 @@
  */
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
-import InlineResponse2008 from '../model/InlineResponse2008';
+import InlineResponse20010 from '../model/InlineResponse20010';
 import Product from '../model/Product';
 
 /**
@@ -41,7 +41,7 @@ export default class ProductsApi {
      * Callback function to receive the result of the createProduct operation.
      * @callback moduleBillaBear/api/ProductsApi~createProductCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -50,7 +50,6 @@ export default class ProductsApi {
      * Create a product
      * @param {module:BillaBear/model/Product} body 
      * @param {module:BillaBear/api/ProductsApi~createProductCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     createProduct(body, callback) {
       
@@ -76,7 +75,7 @@ export default class ProductsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/product', 'POST',
@@ -88,7 +87,7 @@ export default class ProductsApi {
      * Callback function to receive the result of the listProduct operation.
      * @callback moduleBillaBear/api/ProductsApi~listProductCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2008{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20010{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -122,7 +121,7 @@ export default class ProductsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2008;
+      let returnType = InlineResponse20010;
 
       return this.apiClient.callApi(
         '/product', 'GET',

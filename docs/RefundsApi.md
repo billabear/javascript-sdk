@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getRefundsForCustomer"></a>
 # **getRefundsForCustomer**
-> InlineResponse2002 getRefundsForCustomer(customerId, opts)
+> InlineResponse2003 getRefundsForCustomer(customerId, opts)
 
 List Customer Refunds
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="listRefund"></a>
 # **listRefund**
-> InlineResponse2002 listRefund(opts)
+> InlineResponse2003 listRefund(opts)
 
 List
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 

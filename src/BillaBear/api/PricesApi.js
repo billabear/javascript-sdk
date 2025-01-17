@@ -15,7 +15,7 @@
  */
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
-import InlineResponse2009 from '../model/InlineResponse2009';
+import InlineResponse20011 from '../model/InlineResponse20011';
 import Price from '../model/Price';
 
 /**
@@ -41,7 +41,7 @@ export default class PricesApi {
      * Callback function to receive the result of the createPrice operation.
      * @callback moduleBillaBear/api/PricesApi~createPriceCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -51,7 +51,6 @@ export default class PricesApi {
      * @param {module:BillaBear/model/Price} body 
      * @param {String} productId The id of the product to retrieve
      * @param {module:BillaBear/api/PricesApi~createPriceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     createPrice(body, productId, callback) {
       
@@ -81,7 +80,7 @@ export default class PricesApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/product/{productId}/price', 'POST',
@@ -93,7 +92,7 @@ export default class PricesApi {
      * Callback function to receive the result of the listPrice operation.
      * @callback moduleBillaBear/api/PricesApi~listPriceCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2009{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20011{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -131,7 +130,7 @@ export default class PricesApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2009;
+      let returnType = InlineResponse20011;
 
       return this.apiClient.callApi(
         '/product/{productId}/price', 'GET',

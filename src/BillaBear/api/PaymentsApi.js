@@ -15,10 +15,10 @@
  */
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
-import InlineResponse20012 from '../model/InlineResponse20012';
-import InlineResponse2003 from '../model/InlineResponse2003';
+import InlineResponse20014 from '../model/InlineResponse20014';
 import InlineResponse2004 from '../model/InlineResponse2004';
-import InlineResponse2007 from '../model/InlineResponse2007';
+import InlineResponse2006 from '../model/InlineResponse2006';
+import InlineResponse2009 from '../model/InlineResponse2009';
 import IssueRefundPayment from '../model/IssueRefundPayment';
 
 /**
@@ -44,7 +44,7 @@ export default class PaymentsApi {
      * Callback function to receive the result of the chargeInvoice operation.
      * @callback moduleBillaBear/api/PaymentsApi~chargeInvoiceCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse20012{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20014{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -79,7 +79,7 @@ export default class PaymentsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20012;
+      let returnType = InlineResponse20014;
 
       return this.apiClient.callApi(
         '/invoice/{invoiceId}/charge', 'POST',
@@ -185,7 +185,7 @@ export default class PaymentsApi {
      * Callback function to receive the result of the getInvoicesForCustomer operation.
      * @callback moduleBillaBear/api/PaymentsApi~getInvoicesForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2004{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2006{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -220,7 +220,7 @@ export default class PaymentsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2004;
+      let returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/invoices', 'GET',
@@ -232,7 +232,7 @@ export default class PaymentsApi {
      * Callback function to receive the result of the getPaymentsForCustomer operation.
      * @callback moduleBillaBear/api/PaymentsApi~getPaymentsForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2003{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2004{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -271,7 +271,7 @@ export default class PaymentsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2003;
+      let returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/payment', 'GET',
@@ -283,7 +283,7 @@ export default class PaymentsApi {
      * Callback function to receive the result of the listPayment operation.
      * @callback moduleBillaBear/api/PaymentsApi~listPaymentCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2007{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2009{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -317,7 +317,7 @@ export default class PaymentsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2007;
+      let returnType = InlineResponse2009;
 
       return this.apiClient.callApi(
         '/payment', 'GET',
@@ -329,7 +329,7 @@ export default class PaymentsApi {
      * Callback function to receive the result of the refundPayment operation.
      * @callback moduleBillaBear/api/PaymentsApi~refundPaymentCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -339,7 +339,6 @@ export default class PaymentsApi {
      * @param {module:BillaBear/model/IssueRefundPayment} body 
      * @param {String} paymentId The id of the payment
      * @param {module:BillaBear/api/PaymentsApi~refundPaymentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     refundPayment(body, paymentId, callback) {
       
@@ -369,7 +368,7 @@ export default class PaymentsApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/payment/{paymentId}/refund', 'POST',

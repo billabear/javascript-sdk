@@ -14,7 +14,7 @@
  *
  */
 import ApiClient from '../ApiClient';
-import Invoice from './Invoice';
+import Paths1paymentgetresponses200contentapplication1jsonschemapropertiesdataitems from './Paths1paymentgetresponses200contentapplication1jsonschemapropertiesdataitems';
 
 /**
  * The InlineResponse2004 model module.
@@ -41,7 +41,7 @@ export default class InlineResponse2004 {
     if (data) {
       obj = obj || new InlineResponse2004();
       if (data.hasOwnProperty('data'))
-        obj.data = ApiClient.convertToType(data['data'], [Invoice]);
+        obj.data = ApiClient.convertToType(data['data'], [Paths1paymentgetresponses200contentapplication1jsonschemapropertiesdataitems]);
       if (data.hasOwnProperty('has_more'))
         obj.hasMore = ApiClient.convertToType(data['has_more'], 'Boolean');
       if (data.hasOwnProperty('last_key'))
@@ -52,7 +52,7 @@ export default class InlineResponse2004 {
 }
 
 /**
- * @member {Array.<module:BillaBear/model/Invoice>} data
+ * @member {Array.<module:BillaBear/model/Paths1paymentgetresponses200contentapplication1jsonschemapropertiesdataitems>} data
  */
 InlineResponse2004.prototype.data = undefined;
 

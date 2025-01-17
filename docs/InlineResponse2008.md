@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[Product]**](Product.md) |  | [optional] 
+**data** | [**[Subscription]**](Subscription.md) |  | [optional] 
 **hasMore** | **Boolean** |  | [optional] 
 **lastKey** | **String** |  | [optional] 

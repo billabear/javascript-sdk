@@ -14,6 +14,7 @@
  *
  */
 import ApiClient from '../ApiClient';
+import Price from './Price';
 
 /**
  * The InlineResponse20011 model module.
@@ -39,15 +40,29 @@ export default class InlineResponse20011 {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new InlineResponse20011();
-      if (data.hasOwnProperty('success'))
-        obj.success = ApiClient.convertToType(data['success'], 'Boolean');
+      if (data.hasOwnProperty('data'))
+        obj.data = ApiClient.convertToType(data['data'], [Price]);
+      if (data.hasOwnProperty('has_more'))
+        obj.hasMore = ApiClient.convertToType(data['has_more'], 'Boolean');
+      if (data.hasOwnProperty('last_key'))
+        obj.lastKey = ApiClient.convertToType(data['last_key'], 'String');
     }
     return obj;
   }
 }
 
 /**
- * @member {Boolean} success
+ * @member {Array.<module:BillaBear/model/Price>} data
  */
-InlineResponse20011.prototype.success = undefined;
+InlineResponse20011.prototype.data = undefined;
+
+/**
+ * @member {Boolean} hasMore
+ */
+InlineResponse20011.prototype.hasMore = undefined;
+
+/**
+ * @member {String} lastKey
+ */
+InlineResponse20011.prototype.lastKey = undefined;
 

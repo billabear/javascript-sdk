@@ -15,8 +15,8 @@
  */
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
-import InlineResponse20012 from '../model/InlineResponse20012';
-import InlineResponse2004 from '../model/InlineResponse2004';
+import InlineResponse20014 from '../model/InlineResponse20014';
+import InlineResponse2006 from '../model/InlineResponse2006';
 
 /**
 * Invoices service.
@@ -41,7 +41,7 @@ export default class InvoicesApi {
      * Callback function to receive the result of the chargeInvoice operation.
      * @callback moduleBillaBear/api/InvoicesApi~chargeInvoiceCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse20012{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20014{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -76,7 +76,7 @@ export default class InvoicesApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20012;
+      let returnType = InlineResponse20014;
 
       return this.apiClient.callApi(
         '/invoice/{invoiceId}/charge', 'POST',
@@ -135,7 +135,7 @@ export default class InvoicesApi {
      * Callback function to receive the result of the getInvoicesForCustomer operation.
      * @callback moduleBillaBear/api/InvoicesApi~getInvoicesForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2004{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2006{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -170,7 +170,7 @@ export default class InvoicesApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2004;
+      let returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/invoices', 'GET',

@@ -14,7 +14,7 @@
  *
  */
 import ApiClient from '../ApiClient';
-import Subscription from './Subscription';
+import Invoice from './Invoice';
 
 /**
  * The InlineResponse2006 model module.
@@ -41,7 +41,7 @@ export default class InlineResponse2006 {
     if (data) {
       obj = obj || new InlineResponse2006();
       if (data.hasOwnProperty('data'))
-        obj.data = ApiClient.convertToType(data['data'], [Subscription]);
+        obj.data = ApiClient.convertToType(data['data'], [Invoice]);
       if (data.hasOwnProperty('has_more'))
         obj.hasMore = ApiClient.convertToType(data['has_more'], 'Boolean');
       if (data.hasOwnProperty('last_key'))
@@ -52,7 +52,7 @@ export default class InlineResponse2006 {
 }
 
 /**
- * @member {Array.<module:BillaBear/model/Subscription>} data
+ * @member {Array.<module:BillaBear/model/Invoice>} data
  */
 InlineResponse2006.prototype.data = undefined;
 

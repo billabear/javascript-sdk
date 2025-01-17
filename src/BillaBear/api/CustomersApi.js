@@ -15,18 +15,22 @@
  */
 import ApiClient from "../ApiClient";
 import Customer from '../model/Customer';
+import CustomerIdUasgelimitBody from '../model/CustomerIdUasgelimitBody';
 import Error from '../model/Error';
 import InlineResponse200 from '../model/InlineResponse200';
 import InlineResponse2001 from '../model/InlineResponse2001';
-import InlineResponse20011 from '../model/InlineResponse20011';
+import InlineResponse20013 from '../model/InlineResponse20013';
 import InlineResponse2002 from '../model/InlineResponse2002';
 import InlineResponse2003 from '../model/InlineResponse2003';
 import InlineResponse2004 from '../model/InlineResponse2004';
 import InlineResponse2005 from '../model/InlineResponse2005';
 import InlineResponse2006 from '../model/InlineResponse2006';
+import InlineResponse2007 from '../model/InlineResponse2007';
+import InlineResponse2008 from '../model/InlineResponse2008';
 import InlineResponse400 from '../model/InlineResponse400';
 import SeatsAddBody from '../model/SeatsAddBody';
 import SeatsRemoveBody from '../model/SeatsRemoveBody';
+import UsageLimit from '../model/UsageLimit';
 import VoucherCode from '../model/VoucherCode';
 
 /**
@@ -52,7 +56,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the addSeatsSubscriptions operation.
      * @callback moduleBillaBear/api/CustomersApi~addSeatsSubscriptionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse20011{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20013{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -92,7 +96,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20011;
+      let returnType = InlineResponse20013;
 
       return this.apiClient.callApi(
         '/subscription/{subscriptionId}/seats/add', 'POST',
@@ -104,7 +108,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the applyVoucherToCustomer operation.
      * @callback moduleBillaBear/api/CustomersApi~applyVoucherToCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -114,7 +118,6 @@ export default class CustomersApi {
      * @param {module:BillaBear/model/VoucherCode} body 
      * @param {String} customerId The id of the customer to retrieve
      * @param {module:BillaBear/api/CustomersApi~applyVoucherToCustomerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     applyVoucherToCustomer(body, customerId, callback) {
       
@@ -144,7 +147,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/voucher', 'POST',
@@ -200,10 +203,113 @@ export default class CustomersApi {
       );
     }
     /**
+     * Callback function to receive the result of the createCustomerUsageLimit operation.
+     * @callback moduleBillaBear/api/CustomersApi~createCustomerUsageLimitCallback
+     * @param {String} error Error message, if any.
+     * @param {module:BillaBear/model/UsageLimit{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create Usage Limit
+     * Create Usage Limit for the custoemr
+     * @param {module:BillaBear/model/CustomerIdUasgelimitBody} body 
+     * @param {String} customerId The id of the customer to retrieve
+     * @param {module:BillaBear/api/CustomersApi~createCustomerUsageLimitCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    createCustomerUsageLimit(body, customerId, callback) {
+      
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createCustomerUsageLimit");
+      }
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling createCustomerUsageLimit");
+      }
+
+      let pathParams = {
+        'customerId': customerId
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['ApiKeyAuth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = UsageLimit;
+
+      return this.apiClient.callApi(
+        '/customer/{customerId}/uasge-limit', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the customerCustomerIdUasgeLimitLimitIdDelete operation.
+     * @callback moduleBillaBear/api/CustomersApi~customerCustomerIdUasgeLimitLimitIdDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete Usage Limit
+     * Delete Usage Limit for the custoemr
+     * @param {String} customerId The id of the customer to retrieve
+     * @param {String} usageLimitId The id of the usage limit
+     * @param {module:BillaBear/api/CustomersApi~customerCustomerIdUasgeLimitLimitIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    customerCustomerIdUasgeLimitLimitIdDelete(customerId, usageLimitId, callback) {
+      
+      let postBody = null;
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling customerCustomerIdUasgeLimitLimitIdDelete");
+      }
+      // verify the required parameter 'usageLimitId' is set
+      if (usageLimitId === undefined || usageLimitId === null) {
+        throw new Error("Missing the required parameter 'usageLimitId' when calling customerCustomerIdUasgeLimitLimitIdDelete");
+      }
+
+      let pathParams = {
+        'customerId': customerId,'usageLimitId': usageLimitId
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['ApiKeyAuth'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+
+      return this.apiClient.callApi(
+        '/customer/{customerId}/uasge-limit/{limitId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the disableCustomer operation.
      * @callback moduleBillaBear/api/CustomersApi~disableCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -212,7 +318,6 @@ export default class CustomersApi {
      * Disable customer
      * @param {String} customerId The id of the customer to retrieve
      * @param {module:BillaBear/api/CustomersApi~disableCustomerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     disableCustomer(customerId, callback) {
       
@@ -238,7 +343,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/disable', 'POST',
@@ -250,7 +355,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the enableCustomer operation.
      * @callback moduleBillaBear/api/CustomersApi~enableCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {'String'{ data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -259,7 +364,6 @@ export default class CustomersApi {
      * Enable a customer
      * @param {String} customerId The id of the customer to retrieve
      * @param {module:BillaBear/api/CustomersApi~enableCustomerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
     enableCustomer(customerId, callback) {
       
@@ -285,7 +389,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = 'String';
+      let returnType = null;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/enable', 'POST',
@@ -297,7 +401,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the getActiveForCustomer operation.
      * @callback moduleBillaBear/api/CustomersApi~getActiveForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2006{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2008{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -332,7 +436,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2006;
+      let returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/subscription/active', 'GET',
@@ -358,6 +462,7 @@ export default class CustomersApi {
      * @param {String} opts.country The country code to search for
      * @param {String} opts.reference The reference to search for
      * @param {String} opts.externalReference The external reference to search for
+     * @param {String} opts.companyName The company name to search for
      * @param {module:BillaBear/api/CustomersApi~getAllCustomersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -369,7 +474,7 @@ export default class CustomersApi {
         
       };
       let queryParams = {
-        'limit': opts['limit'],'last_key': opts['lastKey'],'email': opts['email'],'country': opts['country'],'reference': opts['reference'],'external_reference': opts['externalReference']
+        'limit': opts['limit'],'last_key': opts['lastKey'],'email': opts['email'],'country': opts['country'],'reference': opts['reference'],'external_reference': opts['externalReference'],'company_name': opts['companyName']
       };
       let headerParams = {
         
@@ -437,10 +542,57 @@ export default class CustomersApi {
       );
     }
     /**
+     * Callback function to receive the result of the getCustomerCosts operation.
+     * @callback moduleBillaBear/api/CustomersApi~getCustomerCostsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:BillaBear/model/InlineResponse2001{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Usage Cost Estimate
+     * The estimated costs from usage based billing for a customer
+     * @param {String} customerId The id of the customer to retrieve
+     * @param {module:BillaBear/api/CustomersApi~getCustomerCostsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    getCustomerCosts(customerId, callback) {
+      
+      let postBody = null;
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling getCustomerCosts");
+      }
+
+      let pathParams = {
+        'customerId': customerId
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['ApiKeyAuth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2001;
+
+      return this.apiClient.callApi(
+        '/customer/{customerId}/costs', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the getCustomerLimitsById operation.
      * @callback moduleBillaBear/api/CustomersApi~getCustomerLimitsByIdCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2001{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2002{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -475,7 +627,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/limits', 'GET',
@@ -484,10 +636,57 @@ export default class CustomersApi {
       );
     }
     /**
+     * Callback function to receive the result of the getCustomerUsageLimitsById operation.
+     * @callback moduleBillaBear/api/CustomersApi~getCustomerUsageLimitsByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:BillaBear/model/InlineResponse2005{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Fetch Customer Usage Limits
+     * Usage Limits for a specific customer
+     * @param {String} customerId The id of the customer to retrieve
+     * @param {module:BillaBear/api/CustomersApi~getCustomerUsageLimitsByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    getCustomerUsageLimitsById(customerId, callback) {
+      
+      let postBody = null;
+      // verify the required parameter 'customerId' is set
+      if (customerId === undefined || customerId === null) {
+        throw new Error("Missing the required parameter 'customerId' when calling getCustomerUsageLimitsById");
+      }
+
+      let pathParams = {
+        'customerId': customerId
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = ['ApiKeyAuth'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2005;
+
+      return this.apiClient.callApi(
+        '/customer/{customerId}/uasge-limit', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the getForCustomer operation.
      * @callback moduleBillaBear/api/CustomersApi~getForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2006{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2008{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -522,7 +721,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2006;
+      let returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/subscription', 'GET',
@@ -534,7 +733,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the getInvoicesForCustomer operation.
      * @callback moduleBillaBear/api/CustomersApi~getInvoicesForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2004{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2006{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -569,7 +768,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2004;
+      let returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/invoices', 'GET',
@@ -581,7 +780,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the getPaymentsForCustomer operation.
      * @callback moduleBillaBear/api/CustomersApi~getPaymentsForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2003{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2004{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -620,7 +819,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2003;
+      let returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/payment', 'GET',
@@ -632,7 +831,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the getRefundsForCustomer operation.
      * @callback moduleBillaBear/api/CustomersApi~getRefundsForCustomerCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2002{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2003{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -671,7 +870,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/refund', 'GET',
@@ -683,7 +882,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the listPaymentDetails operation.
      * @callback moduleBillaBear/api/CustomersApi~listPaymentDetailsCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse2005{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse2007{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -718,7 +917,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2005;
+      let returnType = InlineResponse2007;
 
       return this.apiClient.callApi(
         '/customer/{customerId}/payment-methods', 'GET',
@@ -730,7 +929,7 @@ export default class CustomersApi {
      * Callback function to receive the result of the removeSeatsSubscriptions operation.
      * @callback moduleBillaBear/api/CustomersApi~removeSeatsSubscriptionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:BillaBear/model/InlineResponse20011{ data The data returned by the service call.
+     * @param {module:BillaBear/model/InlineResponse20013{ data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -770,7 +969,7 @@ export default class CustomersApi {
       let authNames = ['ApiKeyAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineResponse20011;
+      let returnType = InlineResponse20013;
 
       return this.apiClient.callApi(
         '/subscription/{subscriptionId}/seats/remove', 'POST',
